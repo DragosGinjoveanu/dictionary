@@ -54,14 +54,6 @@
       // this function searches if the given word is already in the list
       function searchWord() {
         text = document.getElementById('word').value;
-        /*
-        var ok = 0;
-        for (var i = 0; i < wordArray.lenght; i++) {
-          if (text == wordArray[i]) {
-            ok = 1;
-          }
-        }
-        */
         if (wordArray.indexOf(text) != -1) {
           alert("The word is in the list");
         } else {
