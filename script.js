@@ -1,16 +1,21 @@
 var wordArray = [];
-//this function adds the word
+//this function adds the word if it is not already
 function addWord() {
   document.getElementById("status").innerHTML = "";
   text = document.getElementById('word').value;
-  wordArray.push(text);
-  $('#list').append(`
-    <div class="card">
-      <div class="card-body">
-        <p class="text-center">` + text + `</p>  
-      </div>
-    </div>  
-  `); 
+  if (wordArray.indexOf(text) == -1) {
+    wordArray.push(text);
+    $('#list').append(`
+      <div class="card">
+        <div class="card-body">
+          <p class="text-center">` + text + `</p>  
+        </div>
+      </div>  
+    `); 
+  } else {
+    document.getElementById("status").style.color = "red";
+    document.getElementById("status").innerHTML = "The word is already in the list";
+  }
 }
 // this function searches if the given word is already in the list
 function searchWord() {
